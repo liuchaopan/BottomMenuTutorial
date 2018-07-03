@@ -14,4 +14,9 @@
         android:layout_width="match_parent" android:layout_height="wrap_content"
         android:onClick="showBottomSheet"
         android:text="showBottomSheet"/>
+    <Button
+        android:id="@+id/showScrollPickView"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:onClick="showScrollPickView"
+        android:text="showScrollPickView"/>
 </LinearLayout>

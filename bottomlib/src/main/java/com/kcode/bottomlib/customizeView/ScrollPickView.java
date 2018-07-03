@@ -1,4 +1,4 @@
-package widget;
+package com.kcode.bottomlib.customizeView;
 
 import android.content.res.TypedArray;
 import android.view.View;
@@ -19,7 +19,7 @@ import android.os.Message;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
-import com.huawei.it.ilearning.libray.R;
+import com.kcode.bottomlib.R;
 
 /**
  * Created by liuchaopan on 2018/6/27.
@@ -96,7 +96,7 @@ public class ScrollPickView extends View {
         super(context, attrs);
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.ScrollPickView);
         mMaxTextSize = ta.getDimensionPixelSize(R.styleable.ScrollPickView_centerTextSize,20);
-        mMinTextSize = mMaxTextSize / 2f;
+        mMinTextSize = mMaxTextSize / 1.2f;
         init();
     }
 

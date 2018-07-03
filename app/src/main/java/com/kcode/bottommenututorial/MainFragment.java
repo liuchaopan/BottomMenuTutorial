@@ -54,6 +54,15 @@ public class MainFragment extends Fragment {
                 showBottomSheet();
             }
         });
+
+        Button showScrollPickView = (Button) view.findViewById(R.id.showScrollPickView);
+        showScrollPickView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showScrollPickView();
+            }
+        });
+
     }
 
     public void showDialogFragment(){
@@ -81,6 +90,10 @@ public class MainFragment extends Fragment {
     public void showBottomSheet() {
         Log.i(TAG,"showBottomSheet");
         startActivity(BottomSheetActivity.newIntent(getActivity()));
+    }
+
+    public void showScrollPickView(){
+        com.kcode.bottommenututorial.dialogfragment.BottomDialog.newInstance().show(getFragmentManager(),"ScrollPickView");
     }
 
 }

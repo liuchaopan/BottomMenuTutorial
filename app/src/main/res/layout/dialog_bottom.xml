@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              android:padding="@dimen/activity_horizontal_margin"
-android:background="@color/colorAccent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_horizontal_margin"
+    android:background="@color/colorAccent">
 
-    <TextView android:layout_width="match_parent" android:layout_height="48dp"
-              android:gravity="center_vertical"
-              android:text="bottomSheet"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:text="bottomSheet"/>
+    <com.kcode.bottomlib.customizeView.ScrollPickView
+        android:id="@+id/items_content"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:centerTextSize="18sp"
+        android:background="@color/white"/>
 </LinearLayout>

@@ -12,15 +12,19 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.kcode.bottomlib.customizeView.ScrollPickView;
 import com.kcode.bottommenututorial.R;
 import com.kcode.bottommenututorial.utils.AnimationUtils;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 /**
  * Created by caik on 2016/9/25.
  */
 
 public class BottomDialog extends DialogFragment {
-
+    public ScrollPickView pick;
     public static BottomDialog newInstance() {
 
         Bundle args = new Bundle();
@@ -46,9 +50,14 @@ public class BottomDialog extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         getDialog().requestWindowFeature(Window.FEATURE_NO_TITLE);
         View view = inflater.inflate(R.layout.dialog_bottom,container,false);
+        pick = (ScrollPickView) view.findViewById(R.id.items_content);
         AnimationUtils.slideToUp(view);
         return view;
     }
 
-
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        pick.setData(Arrays.asList(new String[]{"德国三角阀类似的纠纷时发生了非拉法萨芬","阿根廷三角阀类似的纠纷时发生了非拉法萨芬","西班牙三角阀类似的纠纷时发生了非拉法萨芬","巴西三角阀类似的纠纷时发生了非拉法萨芬","葡萄牙三角阀类似的纠纷时发生了非拉法萨芬","英格兰三角阀类似的纠纷时发生了非拉法萨芬","法国三角阀类似的纠纷时发生了非拉法萨芬"}));
+    }
 }

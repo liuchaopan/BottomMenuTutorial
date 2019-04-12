@@ -58,6 +58,6 @@ public class BottomDialog extends DialogFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        pick.setData(Arrays.asList(new String[]{"德国三角阀类似的纠纷时发生了非拉法萨芬","阿根廷三角阀类似的纠纷时发生了非拉法萨芬","西班牙三角阀类似的纠纷时发生了非拉法萨芬","巴西三角阀类似的纠纷时发生了非拉法萨芬","葡萄牙三角阀类似的纠纷时发生了非拉法萨芬","英格兰三角阀类似的纠纷时发生了非拉法萨芬","法国三角阀类似的纠纷时发生了非拉法萨芬"}));
+
     }
 }

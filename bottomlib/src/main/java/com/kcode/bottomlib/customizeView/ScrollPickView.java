@@ -1,6 +1,8 @@
 package com.kcode.bottomlib.customizeView;
 
 import android.content.res.TypedArray;
+import android.graphics.Color;
+import android.graphics.RectF;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
@@ -195,18 +197,31 @@ public class ScrollPickView extends View {
     }
 
     private void drawData(Canvas canvas) {
-        // 先绘制分隔线
-        drawDivider(canvas);
-        // 绘制上方data
-        for (int i = 1; (mCurrentSelected - i) >= 0 && i<=2; i++) {
-            drawOtherText(canvas, i, -1);
-        }
-        //绘制中间data
-        drawCenterText(canvas);
-        // 绘制下方data
-        for (int i = 1; (mCurrentSelected + i) < mDataList.size()  && i<=2; i++) {
-            drawOtherText(canvas, i, 1);
-        }
+        Paint paint = new Paint();
+        paint.setAntiAlias(true);                       //设置画笔为无锯齿
+        paint.setColor(Color.BLACK);                    //设置画笔颜色
+        canvas.drawColor(Color.WHITE);                  //白色背景
+        paint.setStrokeWidth((float) 3.0);              //线宽
+        paint.setStyle(Paint.Style.STROKE);
+        RectF oval=new RectF();                     //RectF对象
+        oval.left=100;                              //左边
+        oval.top=100;                                   //上边
+        oval.right=400;                             //右边
+        oval.bottom=300;                                //下边
+        canvas.drawArc(oval, 60, 160, false, paint);    //绘制圆弧
+
+//        // 先绘制分隔线
+//        drawDivider(canvas);
+//        // 绘制上方data
+//        for (int i = 1; (mCurrentSelected - i) >= 0 && i<=2; i++) {
+//            drawOtherText(canvas, i, -1);
+//        }
+//        //绘制中间data
+//        drawCenterText(canvas);
+//        // 绘制下方data
+//        for (int i = 1; (mCurrentSelected + i) < mDataList.size()  && i<=2; i++) {
+//            drawOtherText(canvas, i, 1);
+//        }
     }
 
     private void drawDivider(Canvas canvas){
